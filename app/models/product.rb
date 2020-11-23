@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
-	has_one_attached :image
+	has_one_attached 	:image
+	has_many 			:line_items
 
 	validates_presence_of :title, :description, :price
 	validates :title, length: {in: 3...64}
