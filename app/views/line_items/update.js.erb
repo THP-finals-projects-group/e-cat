@@ -6,4 +6,4 @@ document.getElementById("listing-product").querySelector("div.product-<%= @line_
     document.getElementById("listing-product").querySelector("div.product-<%= @line_item.id %> a.delete-by-one").remove();
 <% end %>
 
-document.querySelector("p.price span.amount-price").innerHTML = "<%= @cart.total %>";
+document.querySelector("p.price span.amount-price").innerHTML = "<%= @cart.total %>"; 
