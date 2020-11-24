@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ECat</title>
+    <title>E-Cat</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <!-- Bootstrap CDN -->
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <%= render 'layouts/navbar' %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/5069487eeb.js" crossorigin="anonymous"></script>
   </body>
 </html>
+
