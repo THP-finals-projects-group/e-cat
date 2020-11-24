@@ -13,4 +13,12 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require jquery.min
+//= require bootstrap.min
+//= require jquery.easing.1.3
+//= require jquery.countTo
+//= require jquery.flexslider-min
+//= require jquery.waypoints.min
+//= require main
+//= require modernizr-2.6.2.min
+//= require owl.carousel.min
