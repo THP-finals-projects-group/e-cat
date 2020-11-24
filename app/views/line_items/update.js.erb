@@ -1,0 +1,9 @@
+document.getElementById("listing-product").querySelector("div.product-<%= @line_item.id %> span.product-quantity").innerHTML = "<%= @line_item.quantity %>";
+
+document.getElementById("listing-product").querySelector("div.product-<%= @line_item.id %> span.product-all-price").innerHTML = "<%= @line_item.total %>";
+
+<% if @line_item.quantity <= 1 then %>
+    document.getElementById("listing-product").querySelector("div.product-<%= @line_item.id %> a.delete-by-one").remove();
+<% end %>
+
+document.querySelector("p.price span.amount-price").innerHTML = "<%= @cart.total %>"; 
