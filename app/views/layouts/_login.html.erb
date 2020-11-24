@@ -1,0 +1,71 @@
+<!-- Login Modal    -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button class="close close-absolute" type="button" data-dismiss="modal" aria-label="Close">
+        <svg class="svg-icon w-3rem h-3rem svg-icon-light align-middle">
+          <use xlink:href="#close-1"> </use>
+        </svg>
+      </button>
+      <div class="modal-body p-5">
+        <ul class="nav list-inline" role="tablist">
+          <li class="list-inline-item"><a class="nav-link nav-link-lg active" data-toggle="tab" href="#loginModalTabLogin" role="tab" id="loginModalLinkLogin" aria-controls="loginModalTabLogin" aria-selected="true">Connexion</a></li>
+          <li class="list-inline-item"><a class="nav-link nav-link-lg" data-toggle="tab" href="#loginModalTabRegister" role="tab" id="loginModalLinkRegister" aria-controls="loginModalTabRegister" aria-selected="false">Inscription</a></li>
+        </ul>
+        <hr class="mb-3">
+        <div class="tab-content">
+          <div class="tab-pane active fade show px-3" id="loginModalTabLogin" role="tabpanel" aria-labelledby="loginModalLinkLogin">
+            <form action="customer-orders.html" method="get">
+              <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" id="email" type="text">
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col">
+                    <label class="form-label" for="loginPassword">Mot de passe</label>
+                  </div>
+                  <div class="col-auto"><a class="form-text small" href="#">Mot de passe oublié ?</a></div>
+                </div>
+                <input class="form-control" name="loginPassword" id="loginPassword" type="password" required data-msg="Entrez votre mot de passe >
+              </div>
+              <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" id="loginRemember" type="checkbox">
+                  <label class="custom-control-label text-muted" for="loginRemember"> <span class="text-sm">Se souvenir de moi</span></label>
+                </div>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-block btn-outline-dark" type="submit"><i class="fa fa-sign-in-alt mr-2"></i> Se connecter</button>
+              </div>
+            </form>
+          </div>
+          <!-- Register    -->
+          <div class="tab-pane fade px-3" id="loginModalTabRegister" role="tabpanel" aria-labelledby="loginModalLinkRegister">
+            <form action="customer-orders.html" method="get">
+              <div class="form-group">
+                <label class="form-label" for="registerFirst_Name">Prénom</label>
+                <input class="form-control" id="registerFirst_Name" type="text">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="registerName">Nom</label>
+                <input class="form-control" id="registerName" type="text">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="registerEmail">Email</label>
+                <input class="form-control" id="registerEmail" type="text">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="registerPassword">Mot de passe</label>
+                <input class="form-control" id="registerPassword" type="password">
+              </div>
+              <div class="form-group text-center">
+                <button class="btn btn-block btn-outline-dark" type="submit"><i class="far fa-user mr-2"></i>S'inscrire</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
