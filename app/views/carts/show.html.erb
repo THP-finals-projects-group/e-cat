@@ -2,7 +2,19 @@
 
 <p>
   <strong>User:</strong>
-  <%= @cart.user %>
+  <%= @cart.user_id %>
+</p>
+
+<ul>
+  <strong><U>Liste des produits:</U></strong>
+  <% @cart.line_items.each do |item|%>
+  <li><%= item.product.title%> (x <%= item.quantity%>) : <%=item.total%> €</li>
+  <% end %> 
+</ul>
+
+<p>
+  <strong>Total:</strong>
+  <%= @cart.total %> €
 </p>
 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
