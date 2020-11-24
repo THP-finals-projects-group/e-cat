@@ -36,7 +36,11 @@
         <td><%= product.title %></td>
         <td><%= product.description %></td>
         <td><%= product.price %></td>
+        <% if user_signed_in? %>
         <td><%= link_to 'Ajouter au panier', line_items_path(product_id: product.id), method: 'POST' %></td>
+        <%else%>
+        <td><%= link_to 'Ajouter au panier', new_user_session_path %></td>
+        <%end%>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

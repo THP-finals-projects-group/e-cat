@@ -2,6 +2,7 @@ class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_line_item, only: [:show, :edit, :update]
   before_action :set_cart, only: [:create, :edit]
+  before_action :authenticate_user!, only: [:new, :create, :index, :edit, :update, :destroy]
 
   # GET /line_items
   # GET /line_items.json
