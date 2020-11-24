@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<% if current_user %>
+<h4> Bonjour <u><%= current_user.firstname %></u> et bienvenu sur E-Cat !</h4>
+<% end %>
+
+
+<% if current_user %>
+<%= link_to 'Deconnexion', destroy_user_session_path%>
+  <% else %>
+  <%= link_to 'Connexion', new_user_session_path %>
+  <%= link_to 'Inscription', new_user_registration_path %>
+<% end %>
+
 <h1>Products</h1>
 
 <table>
