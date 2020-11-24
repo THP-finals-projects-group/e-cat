@@ -2,10 +2,6 @@
 
 <% if current_user %>
 <h4> Bonjour <u><%= current_user.firstname %></u> et bienvenu sur E-Cat !</h4>
-<% end %>
-
-
-<% if current_user %>
 <%= link_to 'Deconnexion', destroy_user_session_path%>
   <% else %>
   <%= link_to 'Connexion', new_user_session_path %>
