@@ -66,4 +66,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'faker'
 gem 'table_print'
-gem 'dotenv'
+gem 'dotenv-rails'
+gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
