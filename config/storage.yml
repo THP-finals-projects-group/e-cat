@@ -12,7 +12,7 @@ amazon:
   access_key_id: <%= ENV['S3_API'] %>
   secret_access_key: <%= ENV['S3_SECRET_KEY'] %>
   region: eu-west-3
-  bucket: e-cat
+  bucket: dev-e-cat
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
