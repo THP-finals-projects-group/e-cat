@@ -5,16 +5,19 @@
   <%= @cart.user_id %>
 </p>
 
-<ul>
+<ul id="listing-product">
   <strong><U>Liste des produits:</U></strong>
   <% @cart.line_items.each do |item|%>
-  <li><%= item.product.title%> (x <%= item.quantity%>) : <%=item.total%> €</li>
+  <div class="product-<%= item.id %>">
+    <li><%= item.product.title%> (x <%= item.quantity%>) : <%=item.total%> €</li>
+    <%= link_to "Supprimer", line_item_path(item.id), method: :delete, class: "btn btn-danger", remote: true%>
+  </div>
   <% end %> 
 </ul>
 
-<p>
+<p class="price">
   <strong>Total:</strong>
-  <%= @cart.total %> €
+  <span class="amount-price"><%= @cart.total %></span> €
 </p>
 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
