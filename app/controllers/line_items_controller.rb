@@ -44,14 +44,12 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1
   # PATCH/PUT /line_items/1.json
   def update
+    @line_item = LineItem.find(params[:id])
+    @line_item.update(quantity: @line_item.quantity - 1)
+    @cart = Cart.find(1)
     respond_to do |format|
-      if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @line_item }
-      else
-        format.html { render :edit }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to root_path }
+      format.js { }
     end
   end
 
