@@ -9,7 +9,7 @@
   <strong><U>Liste des produits:</U></strong>
   <% @cart.line_items.each do |item|%>
   <div class="product-<%= item.id %>">
-    <li><%= item.product.title%> (x <span class="product-quantity"><%= item.quantity%></span>) : <span class="product-all-price"><%=item.total%></span> €</li>
+    <li><%= item.product.title%> (<span><%= item.product.price %></span> € x <span class="product-quantity"><%= item.quantity%></span>) : <span class="product-all-price"><%=item.total%></span> €</li>
     <% if item.quantity > 1 then %>
       <%= link_to "Supprimer x1", line_item_path(item.id), method: :put, class: "btn btn-danger delete-by-one", remote: true %>
     <% end %>
@@ -23,5 +23,5 @@
   <span class="amount-price"><%= @cart.total %></span> €
 </p>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<%= link_to 'Modifier', edit_cart_path(@cart) %> |
+<%= link_to 'Retour', products_path %>
