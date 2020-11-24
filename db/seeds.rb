@@ -14,12 +14,12 @@ p " *         BEGIN OF SEED         * "
 p " *                               * "
 p " ********************************* "
 
-p "Destroy curent data..."
+# p "Destroy curent data..."
 
-p "Destroying Product... #{Product.count} "
-Product.destroy_all
-p "-----------------------"
-p "-----------------------"
+# p "Destroying Product... #{Product.count} "
+# Product.destroy_all
+# p "-----------------------"
+# p "-----------------------"
 
 # Product
 def generateDescription
