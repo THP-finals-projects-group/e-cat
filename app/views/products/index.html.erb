@@ -8,15 +8,15 @@
   <%= link_to 'Inscription', new_user_registration_path %>
 <% end %>
 
-<h1>Products</h1>
+<h1>Produits</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Image</th>
-      <th>Title</th>
+      <th></th>
+      <th>Nom du E-cat</th>
       <th>Description</th>
-      <th>Price</th>
+      <th>Prix</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -31,15 +31,15 @@
         </td>
         <td><%= product.title %></td>
         <td><%= product.description %></td>
-        <td><%= product.price %></td>
+        <td><%= product.price %> € </td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Ajouter au panier', line_items_path(product_id: product.id), method: 'POST' %></td>
+          <td><%= link_to 'Ajouter au panier', line_items_path(product_id: product.id), method: 'POST' %></td>
         <%else%>
-        <td><%= link_to 'Ajouter au panier', new_user_session_path %></td>
+          <td><%= link_to 'Ajouter au panier', new_user_session_path %></td>
         <%end%>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Voir', product %></td>
+        <td><%= link_to 'Modifier', edit_product_path(product) %></td>
+        <td><%= link_to 'Supprimer', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -47,4 +47,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'Créer un produit', new_product_path %>
