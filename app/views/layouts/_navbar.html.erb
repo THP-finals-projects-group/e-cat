@@ -10,13 +10,13 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to " Profile", user_path(current_user), class: "nav-link fas fa-user fa-2x" %>
+              <%= link_to " Profile", user_path(current_user), class: "nav-link fas fa-user fa-3x" %>
             </li>
             <li class="nav-item">
-              <%= link_to " Vendre une image de chat", new_product_path, class: "nav-link fas fa-paw fa-2x" %>
+              <%= link_to " Vendre une image de chat", new_product_path, class: "nav-link fas fa-paw fa-3x" %>
             </li>
             <li class="nav-item">
-              <%= link_to " Panier", cart_path(Cart.find_or_create_by(user_id: current_user.id)), class: "nav-link fas fa-shopping-cart fa-2x" %>
+              <%= link_to " Panier", cart_path(Cart.find_or_create_by(user_id: current_user.id)), class: "nav-link fas fa-shopping-cart fa-3x" %>
             </li>
           <% end %>
         </ul>
