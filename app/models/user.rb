@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :adresses
   has_many :carts
+  has_many :orders
   validates_presence_of :firstname, :lastname
 end
