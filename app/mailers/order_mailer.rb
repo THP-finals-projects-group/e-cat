@@ -1,8 +1,9 @@
 class OrderMailer < ApplicationMailer
   def order_mail
     @user = User.last
-    @order = Order.last
-    @url = "https://dev-e-cat.herokuapp.com/"    
+    @product = Product.last
+    @url = "https://dev-e-cat.herokuapp.com/"
+    attachments[@product.image.name + ".png"] = to_png(@product.image)
     mail(
       from: "dev-a-cat@yopmail.com", 
       to: @user.email,
