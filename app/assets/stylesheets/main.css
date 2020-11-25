@@ -112,8 +112,21 @@ h1 {
 
 .text-align-center {
     text-align: center;
-    margin-top: 160px;
+    margin-top: 100px;
 }
+
+.text-align-center-login {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.m-t {
+    margin-top: 120px;
+}
+
+.m-t-btn {
+    margin-top: 20px;
+} 
 
 form {
     display: inline-block;
