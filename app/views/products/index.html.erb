@@ -1,34 +1,36 @@
-<p id="notice"><%= notice %></p>
 
-<% if current_user %>
-<h5> Connecté en tant que <u><%= current_user.firstname %></u></h5>
-<%else%>
-<h5> Vous n'etes <u><strong>pas</strong></u> connecté</h5>
-<%end%>
+  <p id="notice"><%= notice %></p>
 
-<hr>
+  <% if current_user %>
+    <h5> Connecté en tant que <u><%= current_user.firstname %></u></h5>
+  <%else%>
+    <h5> Vous n'etes <u><strong>pas</strong></u> connecté</h5>
+  <%end%>
 
-<div class="hero-image">
-  <div class="hero-text">
-    <% if user_signed_in? %>
-      <h1 class="color-hero"> Bienvenue sur E-Cat <%=current_user.firstname%> !</h1>
-    <%else%>
-    <h1 class="color-hero"> Bienvenue sur E-Cat !</h1>
-    <% end %>
-<p>C'est ici que vous ferez les meilleurs A-Chat !</p>
-<% if current_user %>
-<%= link_to 'Deconnexion', destroy_user_session_path, :class => "btn btn-primary btn-outline btn-lg" %>
-<%else%>
-<%= link_to 'Connexion', new_user_session_path, :class => "btn btn-primary btn-outline btn-lg" %>
-<%= link_to 'Inscription', new_user_registration_path, :class => "btn btn-primary btn-outline btn-lg"%>
-<%end%>
-</div>
-</div> 
+  <hr>
 
-<div class="row">
-<hr>
-<h1 class= "text-center">Produits</h1>
+  <div class="hero-image">
+    <div class="hero-text">
+      <% if user_signed_in? %>
+        <h1 class="color-hero"> Bienvenue sur E-Cat <%=current_user.firstname%> !</h1>
+      <%else%>
+      <h1 class="color-hero"> Bienvenue sur E-Cat !</h1>
+      <% end %>
+      <p>C'est ici que vous ferez les meilleurs A-Chat !</p>
+      <% if current_user %>
+        <%= link_to 'Deconnexion', destroy_user_session_path, :class => "btn btn-primary btn-outline btn-lg" %>
+      <%else%>
+        <%= link_to 'Connexion', new_user_session_path, :class => "btn btn-primary btn-outline btn-lg" %>
+        <%= link_to 'Inscription', new_user_registration_path, :class => "btn btn-primary btn-outline btn-lg"%>
+      <%end%>
+    </div>
+  </div> 
 
+  <div class="row">
+
+    <hr>
+
+    <h1 class= "text-center">Produits</h1>
     <% @products.each do |product| %>
       <div class="col-6 col-md-4 text-center animate-box">
         <div class="product">
@@ -39,36 +41,39 @@
           </div>
           <div class="inner">
             <p>
-            <%= link_to product do %>
-              <i class="far fa-eye fa-2x"></i>
-            <% end %>
-            <% if user_signed_in? %>
-              <%= link_to line_items_path(product_id: product.id), method: 'POST' do %>
-                <i class="fas fa-cart-arrow-down fa-2x"></i>
+              <%= link_to product do %>
+                <i class="far fa-eye fa-2x"></i>
               <% end %>
-            <%else%>
-              <%= link_to new_user_session_path do %>
-                <i class="fas fa-cart-arrow-down fa-2x"></i>
+              <% if user_signed_in? %>
+                <%= link_to line_items_path(product_id: product.id), method: 'POST' do %>
+                  <i class="fas fa-cart-arrow-down fa-2x"></i>
+                <% end %>
+              <%else%>
+                <%= link_to new_user_session_path do %>
+                  <i class="fas fa-cart-arrow-down fa-2x"></i>
+                <%end%>
               <%end%>
-            <%end%>
-            <%= link_to edit_product_path(product) do %>
-              <i class="fas fa-pen fa-2x"></i>
-            <% end %>
-            <%= link_to product, method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer ce produit ?' } do %>
-              <i class="fas fa-times fa-2x"></i>
-            <% end %>  
+              <%= link_to edit_product_path(product) do %>
+                <i class="fas fa-pen fa-2x"></i>
+              <% end %>
+              <%= link_to product, method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer ce produit ?' } do %>
+                <i class="fas fa-times fa-2x"></i>
+              <% end %>  
             </p>
           </div>
           <div class="desc">
             <h3><a href="single.html"><%= product.title %></a></h3>
             <p><%= product.description %><p>
             <span class="price"><%= product.price %> € </span>
+            
             <hr>
+
           </div>
         </div>
       </div>
     <% end %>
   </div>
-    <br>
 
-<%= link_to 'Créer un produit', new_product_path %>
+  <br>
+
+  <%= link_to 'Créer un produit', new_product_path %>

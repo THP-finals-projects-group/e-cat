@@ -107,3 +107,21 @@ h1 {
     border-radius: 5px;
     margin-top: 20px;
 }
+
+/*Page sign_up*/
+
+.text-align-center {
+    text-align: center;
+    margin-top: 180px;
+}
+
+form {
+    display: inline-block;
+    border-radius: 20px;
+}
+
+bg-img {}
+
+.color-hero {
+    color: khaki;
+}
