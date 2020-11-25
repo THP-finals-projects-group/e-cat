@@ -22,7 +22,7 @@
       <div class="amount-price">
       <p class="price"><%= @product.price %></p>
       <%= link_to line_items_path(product_id: @product.id), method: 'POST' do %>
-        Commander
+        Ajouter au panier
       <% end %>
       </div>
     <div class="card-footer text-muted">
