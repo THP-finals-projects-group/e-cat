@@ -782,14 +782,16 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .product {
-  margin-bottom: 40px;
+  margin-bottom: 100px;
+  background-color: ivory ;
+  width: 100%
 }
 .product .product-grid {
   background-size: cover;
-  background-position: top center;
+  background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  height: 350px;
+  height: 70px;
   margin-bottom: 20px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -797,10 +799,10 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .product .product-grid .sale {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 10px;
-  z-index: 100;
+  top: 5px;
+  left: 5px;
+  padding: 5px;
+  z-index: 50;
   background: #d1c286;
   color: #fff;
   -webkit-border-radius: 50%;
@@ -1530,7 +1532,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
   background: #d1c286;
-  color: #fff;
+  color: black;
 }
 
 .btn-success {
@@ -1682,6 +1684,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .js .animate-box {
   opacity: 0;
+  margin-bottom: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */
