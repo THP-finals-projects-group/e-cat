@@ -112,7 +112,7 @@ h1 {
 
 .text-align-center {
     text-align: center;
-    margin-top: 180px;
+    margin-top: 160px;
 }
 
 form {
@@ -124,4 +124,41 @@ bg-img {}
 
 .color-hero {
     color: khaki;
+}
+
+.btn-primary.btn-outline.btn-xs {
+    background: transparent;
+    color: white;
+    border: 2px solid #d1c286;
+}
+
+.btn-primary.btn-outline.btn-xs:hover {
+    background: transparent;
+    color: black;
+    border: 2px solid #d1c286;
+}
+
+.white, em{
+    color: white;
+}
+
+.white:hover {
+    color: black;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
