@@ -136,6 +136,25 @@ h1, h2, h3, h4, h5, h6, figure {
   outline: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+.formaction {
+  padding: 6px 10px;
+  width: 40%;
+  border: none;
+  float: right;
+  font-size: 13px;
+  margin-top: 4px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.formaction:focus {
+    width: 100%;
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .fh5co-nav .menu-2 li button {
   margin-top: 4px;
   padding: 5px;
@@ -1661,7 +1680,12 @@ h1, h2, h3, h4, h5, h6, figure {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #d1c286;
+  border-color: black;
+}
+
+.form-control {
+  border-color:white;
+  color: black;
 }
 
 .row-pb-md {
