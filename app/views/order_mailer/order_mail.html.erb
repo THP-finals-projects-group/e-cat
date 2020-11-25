@@ -6,6 +6,12 @@
   <body>
     <h1>Merci pour ton a-chat <%= @user.firstname %> <%= @user.lastname %> !</h1>
 
+    <% @products_title.length.times do |i| %>
+      <h2>Titre : <%= @products_title[i] %></h2>
+      <p>Description : <%= @products_description[i] %></p>
+      <p>Prix : <%= @products_price[i] %></p>
+    <% end %>
+
     <p> À très vite sur <%= @url %> !</p>
     
   </body>
