@@ -12,6 +12,9 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    if current_user.id != Cart.find(params[:id]).user_id
+      redirect_to root_path
+    end
   end
 
   # GET /carts/new
