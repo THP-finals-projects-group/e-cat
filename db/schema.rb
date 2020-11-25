@@ -48,18 +48,6 @@ ActiveRecord::Schema.define(version: 2020_11_25_094545) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "adresses", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "street_number", null: false
-    t.string "street_name", null: false
-    t.string "zipcode", null: false
-    t.string "city", null: false
-    t.string "country", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_adresses_on_user_id"
-  end
-
   create_table "carts", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -70,10 +58,12 @@ ActiveRecord::Schema.define(version: 2020_11_25_094545) do
   create_table "line_items", force: :cascade do |t|
     t.bigint "cart_id", null: false
     t.bigint "product_id", null: false
+    t.bigint "order_id"
     t.integer "quantity", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["order_id"], name: "index_line_items_on_order_id"
     t.index ["product_id"], name: "index_line_items_on_product_id"
   end
 
@@ -114,7 +104,6 @@ ActiveRecord::Schema.define(version: 2020_11_25_094545) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "users"
-  add_foreign_key "adresses", "users"
   add_foreign_key "carts", "users"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "products"

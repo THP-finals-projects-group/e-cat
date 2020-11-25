@@ -21,8 +21,10 @@
       </div>
       <div class="amount-price">
       <p class="price"><%= @product.price %></p>
-      <%= link_to line_items_path(product_id: @product.id), method: 'POST' do %>
-        Commander
+      <% if user_signed_in? %>
+        <%= link_to line_items_path(product_id: @product.id), method: 'POST' do %>
+          Commander
+        <% end %>
       <% end %>
       </div>
     <div class="card-footer text-muted">
