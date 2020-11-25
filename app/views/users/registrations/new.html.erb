@@ -21,10 +21,7 @@
       <div class="col-md-12">
         <%= f.label :avatar, class: 'white' %>
         <em>(optionel)</em><br />
-        <div class="fileUpload btn btn-primary">
-          <%= f.file_field :avatar, class: 'form-control upload', accept: "image/png, image/gif, image/jpeg" %>
-          <span>Depuis mon ordinateur ...</span>
-        </div>
+          <%= f.file_field :avatar, class: 'form-control', accept: "image/png, image/gif, image/jpeg" %>
       </div>
     </div>
     <div class="row form-group">
@@ -44,7 +41,7 @@
       </div>
     </div>
     <div class="actions">
-    <%= f.submit "Sign up", :class => "btn btn-primary btn-outline btn-xs" %>
+    <%= f.submit "S'inscrire", :class => "btn btn-primary btn-outline btn-xs" %>
     </div>
     <div class="m-t-btn">
     <%= render "users/shared/links"%>
