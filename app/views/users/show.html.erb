@@ -32,6 +32,31 @@
       <div class="text-center">
         <%= link_to 'Editer mon profil', edit_user_registration_path, class:"btn btn-primary btn-outline btn-lg" %>
       </div>
+
+    </br>
+
+      <div class="table table-ligth">
+        <thead>
+          <tr>
+            <th scope="col">titre</th>
+            <th scope="col">prix (€)</th>
+            <th scope="col">quantité</th>
+            <th scope="col">total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <% @products_title.length.times do |i| %>
+              <th><strong><%= @products_title[i] %></strong></th>
+              <th><%= @products_price[i] %></th>
+              <th><%=@products_quantity[i]%></th>
+              <th><%= @products_price[i] * @products_quantity[i]%></th>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
     </div>
   </div>
 </div>

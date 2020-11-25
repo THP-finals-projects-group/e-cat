@@ -10,7 +10,7 @@ class OrderMailer < ApplicationMailer
       @products_title << Product.find(orderitem.product_id).title
       @products_description << Product.find(orderitem.product_id).description
       @products_price << Product.find(orderitem.product_id).price
-      attachments.inline[Product.find(orderitem.product_id).image.name + ".png"] = url_for(Product.find(orderitem.product_id).image)
+      attachments.inline[Product.find(orderitem.product_id).image.name + ".png"] = Product.find(orderitem.product_id).image.download()
     end
 
 
