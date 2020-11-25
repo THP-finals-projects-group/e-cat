@@ -1680,11 +1680,12 @@ h1, h2, h3, h4, h5, h6, figure {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #d1c286;
+  border-color: black;
 }
 
 .form-control {
-  border-color: black;
+  border-color:white;
+  color: black;
 }
 
 .row-pb-md {
