@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-3 col-xs-2">
         <div class="fh5co-logo">
-          <%= link_to "A-chat", root_path %>
+          <%= link_to "E-cat", root_path %>
         </div>
       </div>
       <div class="col-md-6 col-xs-6 text-center menu-1" id="navbarTogglerDemo03">
@@ -11,7 +11,7 @@
 
           <% if user_signed_in? %>
             <li class="nav-item">
-            <%= link_to "Profil", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Profil", user_path(current_user), class: "nav-link" %>
             </li>
             <li class="nav-item">
             <%= link_to "Vendre une image de chat", new_product_path, class: "nav-link" %>
