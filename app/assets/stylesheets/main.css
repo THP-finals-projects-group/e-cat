@@ -183,3 +183,17 @@ h1 {
     background-color:#d1c286;
     color:white;
 }
+
+/* PAGE LOGIN ET SIGN_UP */
+
+.m-t-btn {
+    margin-top: 20px;
+}
+
+.m-t {
+    margin-top: 100px;
+}
+
+.border {
+    border-radius: 50px;
+}

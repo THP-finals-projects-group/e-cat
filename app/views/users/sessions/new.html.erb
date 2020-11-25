@@ -1,32 +1,29 @@
 <div class="container">
-<div class="jumbotron jumbotron-fluid text-center">
-  
+  <div class="jumbotron jumbotron-fluid text-center">
     <h1 class="display-4">Connexion</h1>
-
-<div class="text-align-center-login">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="row form-group ">
-      <div class="col-md-6 ">
-      <%= f.label :email, class: 'white' %><br />
-      <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
+    <div class="text-align-center-login">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="row form-group ">
+          <div class="col-md-6 ">
+            <%= f.label :email, class: 'white' %><br />
+            <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
+          </div>
+          <div class="col-md-6">
+            <%= f.label :password, class: 'white' %><br />
+            <%= f.password_field :password, class: 'form-control', autocomplete: "current-password" %>
+          </div>
+          <% if devise_mapping.rememberable? %>
+            <div class="field m-t">
+              <%= f.check_box :remember_me%>
+              <%= f.label :Se_souvenir_de_moi, class: 'white' %>
+            </div>
+          <% end %>
+          <div class="actions m-t-btn">
+            <%= f.submit "Se connecter", :class => "btn btn-primary btn-outline btn-xs" %>
+          </div>
+        </div>
+      <% end %>
     </div>
-    <div class="col-md-6">
-      <%= f.label :password, class: 'white' %><br />
-      <%= f.password_field :password, class: 'form-control', autocomplete: "current-password" %>
-    </div>
-    <% if devise_mapping.rememberable? %>
-      <div class="field m-t">
-        <%= f.check_box :remember_me%>
-        <%= f.label :remember_me, class: 'white' %>
-      </div>
-    <% end %>
-    <div class="actions m-t-btn">
-      <%= f.submit "Se connecter", :class => "btn btn-primary btn-outline btn-xs" %>
-    </div>
-  <% end %>
-  <div class="m-t-btn">
     <%= render "users/shared/links_login"%>
   </div>
-</div>
-</div>
 </div>
