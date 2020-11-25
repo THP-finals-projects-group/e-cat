@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
 <div id="product-show-part">
-<div class="event container">
+<div class="event">
 <div class="card mb-3">
 <div class="left-part-product">
     <div class="img-event">
@@ -19,11 +19,18 @@
     <div class="card-body description-part">
         <p class="card-text"><span class="element-present">Description : </span><%= @product.description %></p>
       </div>
+      <div class="amount-price">
       <p class="price"><%= @product.price %></p>
+      <%= link_to line_items_path(product_id: @product.id), method: 'POST' do %>
+        Commander
+      <% end %>
+      </div>
     <div class="card-footer text-muted">
         Publié le <%= @product.created_at %>.
     </div>
   </div>
+</div>
+</div>
 </div>
 </div>
 

@@ -113,6 +113,7 @@ h1 {
 #product-show-part {
     border: 2px solid #d1c286;
     border-radius:5px;
+    padding:20px;
 }
 
 #product-show-part h2 {
@@ -131,6 +132,8 @@ h1 {
     display:flex;
     justify-content: space-between;
     align-items:center;
+    margin-top:75px;
+    margin-bottom:50px;
 }
 
 #product-show-part .card .left-part-product img {
@@ -141,4 +144,42 @@ h1 {
 #product-show-part .card .right-part-product {
     background-color:rgba(255,255,255,0.5);
     border: 2px solid #d1c286;
+    padding:15px;
+}
+
+#product-show-part .card .card-title {
+    font-style:italic;
+    color:green;
+}
+
+#product-show-part .card .card-text {
+    font-size:16px;
+    color:black;
+    opacity:0.9;
+}
+
+#product-show-part .card .element-present {
+    font-weight: 500;
+    opacity:0.7;
+    font-size:18px;
+    color:black;
+}
+
+#product-show-part .card .amount-price {
+    text-align:center;
+}
+
+#product-show-part .card .amount-price a {
+    margin-left:20px;
+    color: #d1c286;
+    background-color: white;
+    border:1px solid #d1c286;
+    border-radius:15px;
+    padding:15px;
+    transition:all 0.4s ease;
+}
+
+#product-show-part .card .amount-price a:hover {
+    background-color:#d1c286;
+    color:white;
 }
