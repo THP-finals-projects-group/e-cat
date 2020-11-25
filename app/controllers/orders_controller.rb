@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
 			OrderMailer.order_mail(@order).deliver_now
 
 			puts "saved"
-			redirect_to orders_path, :notice => 'Participation enregisté !'
+			redirect_to user_path(current_user.id), :notice => 'Participation enregisté !'
 			flash[:notive] = "Participation créé !"
 		  else
 			puts "ça n'a pas fonctionne,essaie encore"
