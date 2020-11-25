@@ -107,3 +107,38 @@ h1 {
     border-radius: 5px;
     margin-top: 20px;
 }
+
+/* PAGE PRODUIT */
+
+#product-show-part {
+    border: 2px solid #d1c286;
+    border-radius:5px;
+}
+
+#product-show-part h2 {
+    text-align:center;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+}
+
+#product-show-part .card {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+#product-show-part .card .left-part-product img {
+    height:300px;
+    width:auto;
+}
+
+#product-show-part .card .right-part-product {
+    background-color:rgba(255,255,255,0.5);
+    border: 2px solid #d1c286;
+}

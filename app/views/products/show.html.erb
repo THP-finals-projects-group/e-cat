@@ -1,25 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+<div id="product-show-part">
+<div class="event container">
+<div class="card mb-3">
+<div class="left-part-product">
+    <div class="img-event">
+    <%if @product.image.attached? %>
+      <%= image_tag @product.image, width:"10%" %>
+    <%end%>
+  </div>
+  </div>
+  <div class="right-part-product">
+    <h2 class="card-header"><%= @product.title %></h2>
+    <div class="card-body">
+      <h5 class="card-title">Disponible.</h5>
+    </div>
+    
+    <div class="card-body description-part">
+        <p class="card-text"><span class="element-present">Description : </span><%= @product.description %></p>
+      </div>
+      <p class="price"><%= @product.price %></p>
+    <div class="card-footer text-muted">
+        Publié le <%= @product.created_at %>.
+    </div>
+  </div>
+</div>
+</div>
 
-<p>
-  <%if @product.image.attached? %>
-  	<%= image_tag @product.image, width:"10%" %>
-  <%end%>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
