@@ -41,6 +41,8 @@ class OrdersController < ApplicationController
 
 			@cart.destroy
 
+			OrderMailer.order_mail(@order).deliver_now
+
 			puts "saved"
 			redirect_to orders_path, :notice => 'Participation enregisté !'
 			flash[:notive] = "Participation créé !"

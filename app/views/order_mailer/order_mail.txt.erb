@@ -1,4 +1,10 @@
 Merci pour ton a-chat <%= @user.firstname %> <%= @user.lastname %> !
 ==========================================================
+
+<% @products_title.length.times do |i| %>
+    Titre : <%= @products_title[i] %>
+    Description : <%= @products_description[i] %>
+    Prix : <%= @products_price[i] %>
+<% end %>
  
 À très vite sur <%= @url %> !
