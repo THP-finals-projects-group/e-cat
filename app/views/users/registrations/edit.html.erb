@@ -1,14 +1,14 @@
 <div class="container">
   <div class="jumbotron jumbotron-fluid text-center">
-
+    
     <h1 class="display-4">Editer ton profil</h1>
-
+    
   </br>
-
-    <div class="text-align-center">
-
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= render "users/shared/error_messages", resource: resource %>
+  <%= render "users/shared/error_messages", resource: resource %>
+  
+  <div class="text-align-center">
+    
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         
         <div class="row form-group ">
           <div class="col-md-6">
@@ -40,39 +40,35 @@
               <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
             </div>
 
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-            <% end %>
-
             <div>
               <%= f.label :current_password, class: 'white' %> </br> <i>(we need your current password to confirm your changes)</i><br />
               <%= f.password_field :current_password, class: 'form-control', autocomplete: "current-password" %>
             </div>
           </div>
-
-
-        <div class="row form-group">
-          <div class="col-md-6">
-            <%= f.label :password, class: 'white'%> </br><i>(leave blank if you don't want to change it)</i><br />
-            <%= f.password_field :password, class: 'form-control', autocomplete: "new-password" %>
-          </div>
-        
-          <div class="col-md-6">
-            <%= f.label :password_confirmation, class: 'white' %>
-            <% if @minimum_password_length %>
+          
+          
+          <div class="row form-group">
+            <div class="col-md-6">
+              <%= f.label :password, class: 'white'%> </br><i>(leave blank if you don't want to change it)</i><br />
+              <%= f.password_field :password, class: 'form-control', autocomplete: "new-password" %>
+            </div>
+            
+            <div class="col-md-6">
+              <%= f.label :password_confirmation, class: 'white' %>
+              <% if @minimum_password_length %>
             </br>
-              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %>
             <br />
             <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password" %>
           </div>
         </div>
-
+        
         <div class="row">
           <div class="actions col-md-4">
             <%= f.submit "Update", class:"btn btn-primary btn-outline btn-sm" %>
           </div>
-            <% end %>
+          <% end %>
           <div class="col-md-4">
             <%= button_to "Supprimer mon profil", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn-danger btn-outline btn-sm" %>
           </div>
@@ -80,8 +76,11 @@
             <%= link_to "Back", :back , class:"btn btn-primary btn-outline btn-sm" %>
           </div>
         </div>
+        
+      </div>
       
     </div>
-
   </div>
-</div>
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    Currently waiting confirmation for: <% resource.unconfirmed_email %>
+  <% end %>
