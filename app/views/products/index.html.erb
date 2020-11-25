@@ -1,50 +1,74 @@
 <p id="notice"><%= notice %></p>
 
 <% if current_user %>
-<h4> Bonjour <u><%= current_user.firstname %></u> et bienvenu sur E-Cat !</h4>
-<%= link_to 'Deconnexion', destroy_user_session_path%>
-  <% else %>
-  <%= link_to 'Connexion', new_user_session_path %>
-  <%= link_to 'Inscription', new_user_registration_path %>
-<% end %>
+<h5> Connecté en tant que <u><%= current_user.firstname %></u></h5>
+<%else%>
+<h5> Vous n'etes <u><strong>pas</strong></u> connecté</h5>
+<%end%>
 
-<h1>Produits</h1>
+<hr>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Nom du E-cat</th>
-      <th>Description</th>
-      <th>Prix</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td>
-          <%if product.image.attached? %>
-            <%= image_tag product.image, width:"30%" %>
-          <%end%>
-        </td>
-        <td><%= product.title %></td>
-        <td><%= product.description %></td>
-        <td><%= product.price %> € </td>
-        <% if user_signed_in? %>
-          <td><%= link_to 'Ajouter au panier', line_items_path(product_id: product.id), method: 'POST' %></td>
-        <%else%>
-          <td><%= link_to 'Ajouter au panier', new_user_session_path %></td>
-        <%end%>
-        <td><%= link_to 'Voir', product %></td>
-        <td><%= link_to 'Modifier', edit_product_path(product) %></td>
-        <td><%= link_to 'Supprimer', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="hero-image">
+  <div class="hero-text">
+    <% if user_signed_in? %>
+      <h1 class="color-hero"> Bienvenue sur E-Cat <%=current_user.firstname%> !</h1>
+    <%else%>
+    <h1 class="color-hero"> Bienvenue sur E-Cat !</h1>
     <% end %>
-  </tbody>
-</table>
+<p>C'est ici que vous ferez les meilleurs A-Chat !</p>
+<% if current_user %>
+<%= link_to 'Deconnexion', destroy_user_session_path, :class => "btn btn-primary btn-outline btn-lg" %>
+<%else%>
+<%= link_to 'Connexion', new_user_session_path, :class => "btn btn-primary btn-outline btn-lg" %>
+<%= link_to 'Inscription', new_user_registration_path, :class => "btn btn-primary btn-outline btn-lg"%>
+<%end%>
+</div>
+</div> 
 
-<br>
+<div class="row">
+<hr>
+<h1 class= "text-center">Produits</h1>
+
+    <% @products.each do |product| %>
+      <div class="col-6 col-md-4 text-center animate-box">
+        <div class="product">
+          <div class="padding-bot">
+            <%if product.image.attached? %>
+              <%= image_tag product.image, width:"20%" %>
+            <%end%>
+          </div>
+          <div class="inner">
+            <p>
+            <%= link_to product do %>
+              <i class="far fa-eye fa-2x"></i>
+            <% end %>
+            <% if user_signed_in? %>
+              <%= link_to line_items_path(product_id: product.id), method: 'POST' do %>
+                <i class="fas fa-cart-arrow-down fa-2x"></i>
+              <% end %>
+            <%else%>
+              <%= link_to new_user_session_path do %>
+                <i class="fas fa-cart-arrow-down fa-2x"></i>
+              <%end%>
+            <%end%>
+            <%= link_to edit_product_path(product) do %>
+              <i class="fas fa-pen fa-2x"></i>
+            <% end %>
+            <%= link_to product, method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer ce produit ?' } do %>
+              <i class="fas fa-times fa-2x"></i>
+            <% end %>  
+            </p>
+          </div>
+          <div class="desc">
+            <h3><a href="single.html"><%= product.title %></a></h3>
+            <p><%= product.description %><p>
+            <span class="price"><%= product.price %> € </span>
+            <hr>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+    <br>
 
 <%= link_to 'Créer un produit', new_product_path %>
