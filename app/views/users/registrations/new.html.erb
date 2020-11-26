@@ -1,52 +1,51 @@
 
-  <div class="container">
-<div class="jumbotron jumbotron-fluid text-center">
-
+  <div class="container padding-top-sign-up">
+  <div class="jumbotron jumbotron-fluid text-center">
     <h1 class="display-4">Inscription</h1>
-<div class="text-align-center">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "users/shared/error_messages", resource: resource %>
-    <div class="row form-group ">
-      <div class="col-md-6 ">
-        <%= f.label :Prénom, class: 'white' %><br/> 
-        <%= f.text_field :firstname, class: 'form-control', autofocus: true, required: true %>
-      </div>
-      <div class="col-md-6">
-        <%= f.label :Nom, class: 'white' %><br />
-        <%= f.text_field :lastname, class: 'form-control', autofocus: true, required: true %>
+      <div class="text-align-center">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "users/shared/error_messages", resource: resource %>
+          <div class="row form-group ">
+            <div class="col-md-6 ">
+              <%= f.label :Prénom %><br/> 
+              <%= f.text_field :firstname, class: 'form-control', autofocus: true, required: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.label :Nom %><br />
+              <%= f.text_field :lastname, class: 'form-control', autofocus: true, required: true %>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <%= f.label :avatar %>
+              <em>(optionnel)</em><br />
+              <%= f.file_field :avatar, class: 'form-control', accept: "image/png, image/gif, image/jpeg" %>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> caractères minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, class: 'form-control', autocomplete: "new-password" %>
+            </div>
+          </div>
+          <div class="actions">
+            <%= f.submit "S'inscrire", :class => "btn btn-primary btn-outline btn-xs" %>
+          </div>
+          <br>
+          <div class="m-t-btn-shared">
+            <%= render "users/shared/links"%>
+          </div>
+        <%end%>	
       </div>
     </div>
-    <div class="row form-group">
-      <div class="col-md-12">
-        <%= f.label :avatar, class: 'white' %>
-        <em>(optionel)</em><br />
-          <%= f.file_field :avatar, class: 'form-control', accept: "image/png, image/gif, image/jpeg" %>
-      </div>
-    </div>
-    <div class="row form-group">
-      <div class="col-md-12">
-        <%= f.label :email, class: 'white' %><br />
-        <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
-      </div>
-    </div>
-
-    <div class="row form-group">
-      <div class="col-md-12">
-        <%= f.label :password, class: 'white' %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> caractères minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, class: 'form-control', autocomplete: "new-password" %>
-      </div>
-    </div>
-    <div class="actions">
-    <%= f.submit "S'inscrire", :class => "btn btn-primary btn-outline btn-xs" %>
-    </div>
-    <br>
-    <div class="m-t-btn-shared">
-    <%= render "users/shared/links"%>
   </div>
-  <%end%>	
-</div>
-</div>
 </div>

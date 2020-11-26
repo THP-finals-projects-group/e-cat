@@ -26,6 +26,10 @@ ul {
     padding-left:0;
 }
 
+.white {
+    color: white;
+}
+
 /* PANIER INDEX PRODUCT - ACCUEIL*/
 
 .padding-bot {
@@ -220,6 +224,18 @@ h1 {
     border-radius: 50px;
 }
 
+.m-bot-negtive {
+    margin-top: -50px;
+}
+
+.padding-top-login {
+    padding-top: 120px;
+}
+
+.padding-top-sign-up {
+    padding-top: 20px;
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -253,19 +269,19 @@ h1 {
 }
 
 .image-cropper {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-
 }
+
 .profile-pic {
   display: inline;
   margin: 0 auto;
   height: 100%;
   width: auto;
-  margin-left: -45%;
+  margin-left: -50%;
 }
 
 .p-l-nav {
@@ -306,4 +322,21 @@ body::after {
 
 .p-r-profile {
     padding-right: 100px;
+}
+
+/*EDIT PROFIL*/
+
+.padding-bot-edit {
+    padding-bottom: 139px;
+}
+
+.nav-avatar-edit {
+    width: 150px;
+    height: 90px;
+}
+
+/*USER SHARED*/
+
+.color-h:hover {
+    color: black;
 }
