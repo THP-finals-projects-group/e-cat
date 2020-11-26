@@ -22,7 +22,11 @@
         <div class="dropdown">
           <a class="nav-link btn dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <% if current_user %>
-              <%= image_tag current_user.avatar, :class => "nav-avatar" %>
+              <% if current_user.avatar.attached? %>
+                <%= image_tag current_user.avatar, :class => "nav-avatar" %>
+              <% else %>
+                <%= image_tag("user_avatar_empty.jpg", :class => "nav-avatar") %>
+              <% end %>
             <%else%>
               <span class="fas fa-user fa-4x" style="color: khaki;"></span>
             <%end%>
