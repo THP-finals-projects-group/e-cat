@@ -7,80 +7,69 @@
   <%= render "users/shared/error_messages", resource: resource %>
   
   <div class="text-align-center">
-    
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        
-        <div class="row form-group ">
-          <div class="col-md-6">
-            <div>
-              <%= f.label :fistname, class: 'white'%><br />
-              <%= f.text_field :firstname,  class: 'form-control', autofocus: true, required: true %>
-            </div>
-              </br>
-            <div>
-              <%= f.label :lastname, class: 'white'%><br />
-              <%= f.text_field :lastname, class: 'form-control', autofocus: true, required: true %>
-            </div>
+      <div class="row form-group ">
+        <div class="col-md-6">
+          <div>
+            <%= f.label :fistname, class: 'white'%><br />
+            <%= f.text_field :firstname,  class: 'form-control', autofocus: true, required: true %>
           </div>
-        
+          </br>
+          <div>
+            <%= f.label :lastname, class: 'white'%><br />
+            <%= f.text_field :lastname, class: 'form-control', autofocus: true, required: true %>
+          </div>
+          </div>
           <div class="col-md-6">
           </br>
-            <% if resource.avatar.attached? %>
-              <%= image_tag resource.avatar, width: "33%" %>
-            <% end %>
-            <%= f.file_field :avatar, class: 'form-control', accept: "image/png, image/gif, image/jpeg" %>
-          </div>
+          <% if resource.avatar.attached? %>
+            <%= image_tag resource.avatar, width: "33%" %>
+          <% end %>
+          <%= f.file_field :avatar, class: 'form-control', accept: "image/png, image/gif, image/jpeg" %>
         </div>
-        
-        
-        <div class="row form-group">
-          <div class="col-md-6">
-            <div>
-              <%= f.label :email, class: 'white'%></br><i>(if you want to change your contact)</i>
-              <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
-            </div>
-
-            <div>
-              <%= f.label :current_password, class: 'white' %> </br> <i>(we need your current password to confirm your changes)</i><br />
-              <%= f.password_field :current_password, class: 'form-control', autocomplete: "current-password" %>
-            </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-6">
+          <div>
+            <%= f.label :email, class: 'white'%></br><i>(if you want to change your contact)</i>
+            <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
           </div>
-          
-          
+          <div>
+            <%= f.label :current_password, class: 'white' %> </br> <i>(we need your current password to confirm your changes)</i><br />
+            <%= f.password_field :current_password, class: 'form-control', autocomplete: "current-password" %>
+          </div>
+          </div>
           <div class="row form-group">
             <div class="col-md-6">
               <%= f.label :password, class: 'white'%> </br><i>(leave blank if you don't want to change it)</i><br />
               <%= f.password_field :password, class: 'form-control', autocomplete: "new-password" %>
             </div>
-            
             <div class="col-md-6">
               <%= f.label :password_confirmation, class: 'white' %>
               <% if @minimum_password_length %>
-            </br>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %>
-            <br />
-            <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password" %>
+                </br>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %>
+              <br />
+              <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="actions col-md-4">
+              <%= f.submit "Update", class:"btn btn-primary btn-outline btn-sm" %>
+            </div>
+            <div class="col-md-4">
+              <%= button_to "Supprimer mon profil", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn-danger btn-outline btn-sm" %>
+            </div>
+            <div class="col-md-4">
+              <%= link_to "Retour", user_path(current_user), class:"btn btn-primary btn-outline btn-sm" %>
+            </div>
           </div>
         </div>
-        
-        <div class="row">
-          <div class="actions col-md-4">
-            <%= f.submit "Update", class:"btn btn-primary btn-outline btn-sm" %>
-          </div>
-          <% end %>
-          <div class="col-md-4">
-            <%= button_to "Supprimer mon profil", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn-danger btn-outline btn-sm" %>
-          </div>
-          <div class="col-md-4">
-            <%= link_to "Back", :back , class:"btn btn-primary btn-outline btn-sm" %>
-          </div>
-        </div>
-        
       </div>
-      
-    </div>
+    <% end %>
   </div>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     Currently waiting confirmation for: <% resource.unconfirmed_email %>
   <% end %>
+</div>
