@@ -45,12 +45,12 @@ class OrdersController < ApplicationController
 			OrderMailer.order_mail(@order).deliver_now
 
 			puts "saved"
-			redirect_to user_path(current_user.id), :notice => 'Participation enregisté !'
-			flash[:notive] = "Participation créé !"
+			redirect_to user_path(current_user.id), :notice => 'Paiement enregisté et mail envoyé !'
+			flash[:notive] = "Paiement enregisté et mail envoyé !"
 		  else
 			puts "ça n'a pas fonctionne,essaie encore"
 			puts @order.errors.messages
-			flash.now[:alert] = "We cannot create this event for this reason(s) :"
+			flash.now[:alert] = "We cannot create this order for this reason(s) :"
 			render 'new'
 		  end
 
