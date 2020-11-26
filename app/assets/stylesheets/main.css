@@ -26,8 +26,19 @@ ul {
     padding-left:0;
 }
 
+<<<<<<< HEAD
 .white {
     color: white;
+=======
+/* FOOTER */
+
+#fh5co-services, #fh5co-started, #fh5co-testimonial, #fh5co-started, #fh5co-product, #fh5co-about, #fh5co-contact, #fh5co-footer {
+    padding:3em 0;
+}
+
+#fh5co-product {
+    min-height:calc(100vh - 198px);
+>>>>>>> master
 }
 
 /* PANIER INDEX PRODUCT - ACCUEIL*/
@@ -308,7 +319,18 @@ body::after {
     content: '';
     display: block;
     height: 100px; /* Set same as footer's height */
+
+  }
+
+
+
+/*EDIT CAT PAGE*/
+
+.edit-cat{
+    padding-top: 1em;
 }
+
+
 
 /*PROFILE*/
 
@@ -324,6 +346,7 @@ body::after {
     padding-right: 100px;
 }
 
+<<<<<<< HEAD
 /*EDIT PROFIL*/
 
 .padding-bot-edit {
@@ -340,3 +363,5 @@ body::after {
 .color-h:hover {
     color: black;
 }
+=======
+>>>>>>> master
