@@ -6,12 +6,9 @@
           <%= link_to " E-cat", root_path , class:"fas fa-cat fa-4x", style: "color: khaki;" %>
         </div>
       </div>
-      <div class="col-md-6 col-xs-6 menu-1" id="navbarTogglerDemo03">
+      <div class="col-md-6 col-xs-6 menu-1 p-l-nav" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to " Profile", user_path(current_user), class: "nav-link fas fa-user fa-4x", style: "color: khaki;" %>
-            </li>
             <li class="nav-item">
               <%= link_to " Vendre une image de chat", new_product_path, class: "nav-link fas fa-paw fa-4x", style: "color: khaki;" %>
             </li>
@@ -33,6 +30,10 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
             <% if current_user %>
               <%= link_to 'Deconnexion', destroy_user_session_path, :class => "btn btn-danger btn-outline btn-lg" %>
+              <br>
+              <div class="m-l-profile">
+                <%= link_to 'Profile', user_path(current_user), :class => "btn btn-primary btn-outline btn-lg" %>
+              </div>
             <%else%>
               <%= link_to 'Connexion', new_user_session_path, :class => "btn btn-success btn-outline btn-lg" %> 
               <br>
