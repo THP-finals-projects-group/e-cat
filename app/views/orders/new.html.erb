@@ -1,20 +1,38 @@
-<div class="card text-center">
-  <%= form_tag orders_path do %>
-      <article>
-        <% if flash[:error].present? %>
-          <div id="error_explanation">
-            <p><%= flash[:error] %></p>
+<div class="container">
+  <div class="jumbotron jumbotron-fluid ">
+    <div>
+      <ul id="listing-product">
+        <h2>LISTE DES PRODUITS :</h2>
+          <% @cart.line_items.each do |item|%>
+          <div class="product-<%= item.id %> list-group">
+            <li class="list-group-item list-group-item-action list-group-item-light">
+              <div class="product-short-grp">
+                <%= item.product.title%> (<span><%= item.product.price %></span> € x <span class="product-quantity"><%= item.quantity%></span>) : <span class="product-all-price"><%=item.total%></span> €
+              </div>
+            </li>
           </div>
-        <% end %>
-        <label class="amount">
-          <span>Amount: <%= @amount %></span>
-        </label>
-      </article>
-    
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="A month's subscription"
-              data-amount="<%= @amount * 100 %>"
-              data-locale="auto"></script>
-    <% end %>
+          <% end %> 
+      </ul>
+    </div>
+    <div class="text-center">
+      <%= form_tag orders_path do %>
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+            <label class="amount">
+              <span>Amount: <%= @amount %></span>
+            </label>
+          </article>
+        
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="A month's subscription"
+                  data-amount="<%= @amount * 100 %>"
+                  data-locale="auto"></script>
+      <% end %>
+    </div>
+  </div>
 </div>

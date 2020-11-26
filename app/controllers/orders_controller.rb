@@ -11,7 +11,8 @@ class OrdersController < ApplicationController
 	end
 
 	def new
-	  @order = Order.new
+		@order = Order.new
+
 	  @amount = @cart.total.to_i
 	  session[:price] = @cart.total.to_i
  
