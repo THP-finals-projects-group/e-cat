@@ -25,7 +25,7 @@ p " ********************************* "
 def generateDescription
   array = []
   i = 0
-  while i < 20
+  while i < 21
     string = Faker::Movies::StarWars.quote
     if (string.length > 25 && !(array.include?(string)))
       p string
@@ -39,7 +39,7 @@ end
 def generateTitle
   array = []
   i = 0
-  while i < 20
+  while i < 21
     title = Faker::Movies::StarWars.character
     if !(array.include?(title))
       p title
@@ -53,7 +53,7 @@ end
 def generateAvatar
   array = []
   i = 0
-  while i < 20
+  while i < 21
     title = Faker::Avatar.image(format: "png", set: "set4")
     if !(array.include?(title))
       p title
@@ -67,7 +67,7 @@ end
 titles = generateTitle
 avatars = generateAvatar
 descriptions = generateDescription
-20.times do |n|
+21.times do |n|
   product = Product.create!(
     title: titles[n],
     description: descriptions[n],

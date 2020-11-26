@@ -10,8 +10,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= render 'layouts/navbar' %>
+
+  <body data-turbolinks="false">
+  <%= render 'layouts/navbar' %>
     <%= yield %>
     <%= render 'layouts/footer' %>
     <script src="https://kit.fontawesome.com/5069487eeb.js" crossorigin="anonymous"></script>
