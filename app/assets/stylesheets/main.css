@@ -26,7 +26,10 @@ ul {
     padding-left:0;
 }
 
-/* FOOTER */
+.white {
+    color: white;
+}
+    /* FOOTER */
 
 #fh5co-services, #fh5co-started, #fh5co-testimonial, #fh5co-started, #fh5co-product, #fh5co-about, #fh5co-contact, #fh5co-footer {
     padding:3em 0;
@@ -230,6 +233,18 @@ h1 {
     border-radius: 50px;
 }
 
+.m-bot-negtive {
+    margin-top: -50px;
+}
+
+.padding-top-login {
+    padding-top: 120px;
+}
+
+.padding-top-sign-up {
+    padding-top: 20px;
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -263,19 +278,19 @@ h1 {
 }
 
 .image-cropper {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-
 }
+
 .profile-pic {
   display: inline;
   margin: 0 auto;
   height: 100%;
   width: auto;
-  margin-left: -45%;
+  margin-left: -50%;
 }
 
 .p-l-nav {
@@ -302,6 +317,13 @@ body::after {
     content: '';
     display: block;
     height: 100px; /* Set same as footer's height */
+
+  }
+
+/*EDIT CAT PAGE*/
+
+.edit-cat{
+    padding-top: 1em;
 }
 
 /*PROFILE*/
@@ -316,4 +338,21 @@ body::after {
 
 .p-r-profile {
     padding-right: 100px;
+}
+
+/*EDIT PROFIL*/
+
+.padding-bot-edit {
+    padding-bottom: 139px;
+}
+
+.nav-avatar-edit {
+    width: 150px;
+    height: 90px;
+}
+
+/*USER SHARED*/
+
+.color-h:hover {
+    color: black;
 }

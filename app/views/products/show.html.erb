@@ -15,7 +15,6 @@
     <div class="card-body">
       <h5 class="card-title">Disponible.</h5>
     </div>
-    
     <div class="card-body description-part">
         <p class="card-text"><span class="element-present">Description : </span><%= @product.description %></p>
     </div>
@@ -24,11 +23,7 @@
       <%= link_to line_items_path(product_id: @product.id), method: 'POST' do %>
         Ajouter au panier
       <% end %>
-      <%= link_to @product, method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer ce chat?' } do %>
-      Supprimer ce chat
-      <% end %>
     </div>
-
     <div class="card-footer text-muted">
         Publié le <%= @product.created_at %>.
     </div>
