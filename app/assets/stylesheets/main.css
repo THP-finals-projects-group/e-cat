@@ -79,6 +79,10 @@ body, html {
     background-color: #042A2B;
 }
   
+.product {
+    border-radius: 15px;
+}
+
 /* Place text in the middle of the image */
 
 .hero-text {
