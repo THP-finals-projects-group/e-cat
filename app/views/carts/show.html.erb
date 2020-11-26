@@ -27,10 +27,11 @@
     <span class="amount-price"><%= @cart.total %></span> €
   </p>
   <div>
-    <%= link_to "Commander", new_order_path(@cart), class: "btn btn-primary" %>
+    <% if @cart.total > 0 %>
+      <%= link_to "Commander", new_order_path(@cart), class: "btn btn-primary" %>
+    <%end%>
 
-    <%= link_to 'Modifier', edit_cart_path(@cart) %> |
-    <%= link_to 'Retour', products_path %>
+    <%= link_to 'Retour', products_path, class: "btn btn-danger" %>
   </div>
 </div>
 </div>
