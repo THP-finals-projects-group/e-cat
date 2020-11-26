@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4 text-center">Profil</h1>
+    <h1 class="display-4 ">Bienvenue sur ton profil <%= current_user.firstname %> !</h1>
   </div>
 </div>
 <div class="container">
@@ -34,29 +34,32 @@
       </div>
 
     </br>
-
-      <div class="table table-ligth">
-        <thead>
-          <tr>
-            <th scope="col">titre</th>
-            <th scope="col">prix (€)</th>
-            <th scope="col">quantité</th>
-            <th scope="col">total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-          <% @products_title.length.times do |i| %>
-              <th><strong><%= @products_title[i] %></strong></th>
-              <th><%= @products_price[i] %></th>
-              <th><%=@products_quantity[i]%></th>
-              <th><%= @products_price[i] * @products_quantity[i]%></th>
+    <div>
+      <div class="table ">
+        <table class="table">
+          <thead class="table-header h4">
+            <tr><th class="h3"><strong>Mon historique d'achats :</strong></th></tr>
+            <tr>
+              <th scope="col">Titre</th>
+              <th scope="col">Prix (€)</th>
+              <th scope="col">Quantité</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @products_title.length.times do |i| %>
+              <tr>
+                <th><strong><%= @products_title[i] %></strong></th>
+                <th><%= @products_price[i] %></th>
+                <th><%=@products_quantity[i]%></th>
+                <th><%= @products_price[i] * @products_quantity[i]%></th>
+              </tr>
             <% end %>
-          </tr>
-        </tbody>
-      </table>
+          </tbody>
+        </table>
       </div>
 
+      </div>
     </div>
   </div>
 </div>
