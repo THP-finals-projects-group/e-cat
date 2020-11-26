@@ -1,5 +1,3 @@
-alert("fichier js execute");
-
 document.getElementById("listing-product").querySelector("div.product-<%= @line_item.id %>").remove();
 
 document.querySelector("p.price span.amount-price").innerHTML = "<%= @cart.total %>";

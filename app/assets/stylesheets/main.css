@@ -26,6 +26,16 @@ ul {
     padding-left:0;
 }
 
+/* FOOTER */
+
+#fh5co-services, #fh5co-started, #fh5co-testimonial, #fh5co-started, #fh5co-product, #fh5co-about, #fh5co-contact, #fh5co-footer {
+    padding:3em 0;
+}
+
+#fh5co-product {
+    min-height:calc(100vh - 198px);
+}
+
 /* PANIER INDEX PRODUCT - ACCUEIL*/
 
 .padding-bot {
