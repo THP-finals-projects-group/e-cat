@@ -2,25 +2,46 @@
 ## Description :
 
 ## How to use it :
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+### By Going Online:
 
-* Ruby version
+ - [e-cat](https://dev-e-cat.herokuapp.com/)
 
-* System dependencies
+### By Cloning the repository :
 
-* Configuration
+#### Get  the repository :
 
-* Database creation
+```bash
+git clone https://github.com/THP-finals-projects-group/e-cat.git
+cd e-cat
+```
 
-* Database initialization
+#### Install requirements :
 
-* How to run the test suite
+```bash
+bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Create the Database :
 
-* Deployment instructions
+```bash
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* ...
+#### Running rails server :
+
+```bash
+rails server
+```
+
+##### Its Up !
+
+ - Go see in ur favorite browser with a click [here](http://localhost:3000/)
+
+## License :
+
+[MIT]
+
+
