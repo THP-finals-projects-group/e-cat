@@ -2,11 +2,12 @@
 <div class="hero-image" style="height: 600px;">
   <div class="hero-text">
     <% if user_signed_in? %>
-      <h1 class="color-hero"> Bienvenue sur E-Cat <%=current_user.firstname%> !</h1>
+      <h1 class="color-hero"> Bienvenue <%=current_user.firstname%> !</h1>
+      <h4 class="white">C'est ici que vous ferez les meilleurs A-Chat !</h4>
     <%else%>
-    <h1 class="color-hero"> Bienvenue sur E-Cat !</h1>
+    <h1 class="color-hero"> Bienvenue visiteur !</h1>
+    <h4 class="white">Si vous vous connecté, c'est ici que vous ferez les meilleurs A-Chat !</h4>
     <% end %>
-    <p>C'est ici que vous ferez les meilleurs A-Chat !</p>
   </div>
 </div> 
 <hr>
@@ -16,18 +17,17 @@
       <div class="product">
         <div class="padding-bot">
           <%if product.image.attached? %>
-            <%= image_tag product.image, width:"40%", style: "padding: 1em" %>
+            <%= link_to product do %>
+              <%= image_tag product.image, width:"40%", style: "padding: 1em" %>
+            <% end %>
           <%end%>
         </div>     
         <div class="desc">
-          <h3><a href="single.html"><%= product.title %></a></h3>
+          <h3><%= product.title %></h3>
           <span class="price"><%= product.price %> € </span>
         </div>
         <div class="inner">
           <p>
-            <%= link_to product do %>
-              <i class="far fa-eye fa-2x" style="margin: 0.3em;"></i>
-            <% end %>
             <% if user_signed_in? %>
               <%= link_to line_items_path(product_id: product.id), method: 'POST' do %>
                 <i class="fas fa-cart-arrow-down fa-2x" style="margin: 0.3em;"></i>
@@ -37,13 +37,9 @@
                 <i class="fas fa-cart-arrow-down fa-2x" style="margin: 0.3em;"></i>
               <%end%>
             <%end%>
-
             <%= link_to edit_product_path(product) do %>
               <i class="fas fa-pen fa-2x" style="margin: 0.3em;"></i>
             <% end %>
-            <%= link_to product, method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer ce produit ?' } do %>
-              <i class="fas fa-times fa-2x" style="margin: 0.3em;"></i>
-            <% end %>  
           </p>
         </div>
       </div>
