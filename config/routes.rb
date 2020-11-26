@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
-    get 'user/:id' => 'users#show', as: :user
+    get '/users/:id' => 'users#show', as: :user
   end
 
 end
