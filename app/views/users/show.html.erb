@@ -11,9 +11,14 @@
         <div class="left-part-product">
           <div class="img-event p-l-profile">
             <%if @user.avatar.attached? %>
-              <h1 class="text-center"> Photo de profil</h1>
+              <h2 class="text-center"> Photo de profil</h2>
               <div class="image-cropper">
                 <%= image_tag @user.avatar, :class => "profile-pic" %>
+              </div>
+              <% else %>
+              <h2 class="text-center"> Photo de profil</h2>
+              <div class="image-cropper">
+                <%= image_tag("user_avatar_empty.jpg", :class => "profile-pic") %>
               </div>
             <%end%>
           </div>
