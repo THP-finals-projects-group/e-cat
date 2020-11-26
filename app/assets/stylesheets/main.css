@@ -16,7 +16,11 @@
 
 body {
     max-width: 100vw;
+    position: relative;
+    min-height:100vh; 
+    margin:0;
 }
+
 
 ul {
     padding-left:0;
@@ -32,53 +36,46 @@ ul {
     padding-left: 1em;
     padding-right: 1em;
 }
+
 .js .animate-box {
     margin-bottom: 0em;
 }
-body {
+
+body, html {
     /* background-image: url(https://www.sol-avenue.com/11416-large_default/sol-pvc-gerflor-texline-beton-cire-shade-gris.jpg); */
     background-color: #D0F1BF;
     width: 100%;
-
 }
 
 .width {
     width:"20%";
 }
 
-body, html {
-    height: 100%;
-}
-
 .hero-image {
-    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.futura-sciences.com/buildsv6/images/wide1920/2/0/7/2071bb0ec4_50163443_chat-jouer.jpg");
-  
-    /* Set a specific height */
     height: 50%;
-  
-    /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-  }
+}
 
-  .navbar {
-      margin-top: 0em;
-      margin-bottom: 0em;
-      background-color: #042A2B;
-  }
+.navbar {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    background-color: #042A2B;
+}
   
-  /* Place text in the middle of the image */
-  .hero-text {
+/* Place text in the middle of the image */
+
+.hero-text {
     position: absolute;
     top: 50%;
     left: 30%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 2em;
-  }
+}
 
 p {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -223,10 +220,6 @@ h1 {
     border-radius: 50px;
 }
 
-.ml {
-    
-}
-
 /* NAVBAR */
 
 .navbar {
@@ -248,5 +241,35 @@ h1 {
 }
 
 .navbar .row > div:last-child a {
-    margin-right:30px;
+    margin-right:15px;
+    margin-left:15px;
 }
+
+.nav-avatar {
+    width: 60px;
+    height: 60px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.m-l {
+    margin-left: 2px;
+}
+
+/*FOOTER*/
+
+#fh5co-footer {
+    padding: 2em 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+
+/*BODY SETTINGS FOR THE FOOTER*/
+
+body::after {
+    content: '';
+    display: block;
+    height: 100px; /* Set same as footer's height */
+  }
