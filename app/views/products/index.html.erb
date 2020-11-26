@@ -2,11 +2,12 @@
 <div class="hero-image" style="height: 600px;">
   <div class="hero-text">
     <% if user_signed_in? %>
-      <h1 class="color-hero"> Bienvenue sur E-Cat <%=current_user.firstname%> !</h1>
+      <h1 class="color-hero"> Bienvenue <%=current_user.firstname%> !</h1>
+      <h4 class="white">C'est ici que vous ferez les meilleurs A-Chat !</h4>
     <%else%>
-    <h1 class="color-hero"> Bienvenue sur E-Cat !</h1>
+    <h1 class="color-hero"> Bienvenue visiteur !</h1>
+    <h4 class="white">Si vous vous connecté, c'est ici que vous ferez les meilleurs A-Chat !</h4>
     <% end %>
-    <p>C'est ici que vous ferez les meilleurs A-Chat !</p>
   </div>
 </div> 
 <hr>
