@@ -2,6 +2,7 @@ class Product < ApplicationRecord
 	has_one_attached 	:image
 	has_many 			:line_items, dependent: :delete_all
 
+	has_many :order_items
 	has_many :orders, through: :order_items
 
 	validates_presence_of :title, :description, :price

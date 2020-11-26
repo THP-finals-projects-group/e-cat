@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4 ">Bienvenue sur ton profil <%= current_user.firstname %> !</h1>
+    <h1 class="display-4 text-center">Bienvenue sur ton profil !</h1>
   </div>
 </div>
 <div class="container">
@@ -9,32 +9,39 @@
     <div class="event">
       <div class="card mb-3">
         <div class="left-part-product">
-          <div class="img-event">
+          <div class="img-event p-l-profile">
             <%if @user.avatar.attached? %>
-              <h1 class="text-center"> Votre Avatar</h1>
-              <%= image_tag @user.avatar, width:"10%", :class => "border" %>
+              <h2 class="text-center"> Photo de profil</h2>
+              <div class="image-cropper">
+                <%= image_tag @user.avatar, :class => "profile-pic" %>
+              </div>
+              <% else %>
+              <h2 class="text-center"> Photo de profil</h2>
+              <div class="image-cropper">
+                <%= image_tag("user_avatar_empty.jpg", :class => "profile-pic") %>
+              </div>
             <%end%>
           </div>
         </div>
-        <div class="right-part-product">
-          <h2 class="card-header">Prénom : <%=@user.firstname %></h2>
-          <div class="card-body">
-            <h4 class="card-title text-center">Nom : <%= @user.lastname %></h4>
-          </div>
-          <div class="card-body description-part">
-            <p class="card-text"><span class="element-present">Email : </span><%= @user.email %></p>
-          </div>
-          <div class="card-footer text-muted">
-            <p>Compte créé le <%= @user.created_at %></p>
+        <div class="p-r-profile">
+          <div class="right-part-product">
+            <h2 class="card-header">Prénom : <%=@user.firstname %></h2>
+            <div class="card-body">
+              <h4 class="card-title text-center">Nom : <%= @user.lastname %></h4>
+            </div>
+            <div class="card-body description-part">
+              <p class="card-text"><span class="element-present">Email : </span><%= @user.email %></p>
+            </div>
+            <div class="card-footer text-muted">
+              <p>Compte créé le <%= @user.created_at %></p>
+            </div>
           </div>
         </div>
       </div>
       <div class="text-center">
         <%= link_to 'Editer mon profil', edit_user_registration_path, class:"btn btn-primary btn-outline btn-lg" %>
       </div>
-
-    </br>
-    <div>
+      </br>
       <div class="table ">
         <table class="table">
           <thead class="table-header h4">
@@ -58,8 +65,7 @@
           </tbody>
         </table>
       </div>
-
-      </div>
     </div>
   </div>
 </div>
+<br>
