@@ -273,3 +273,11 @@ body::after {
     display: block;
     height: 100px; /* Set same as footer's height */
   }
+
+
+
+/*EDIT CAT PAGE*/
+
+.edit-cat{
+    padding-top: 1em;
+}
