@@ -26,6 +26,16 @@ ul {
     padding-left:0;
 }
 
+/* FOOTER */
+
+#fh5co-services, #fh5co-started, #fh5co-testimonial, #fh5co-started, #fh5co-product, #fh5co-about, #fh5co-contact, #fh5co-footer {
+    padding:3em 0;
+}
+
+#fh5co-product {
+    min-height:calc(100vh - 198px);
+}
+
 /* PANIER INDEX PRODUCT - ACCUEIL*/
 
 .padding-bot {
@@ -82,7 +92,7 @@ p {
 }
 
 h1 {
-    font-family: "Comic Sans MS", cursive, sans-serif
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .color-hero {
@@ -252,6 +262,26 @@ h1 {
     border-radius:50%;
 }
 
+.image-cropper {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+}
+.profile-pic {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+  margin-left: -45%;
+}
+
+.p-l-nav {
+    padding-left: 130px;
+}
+
 .m-l {
     margin-left: 2px;
 }
@@ -272,4 +302,18 @@ body::after {
     content: '';
     display: block;
     height: 100px; /* Set same as footer's height */
-  }
+}
+
+/*PROFILE*/
+
+.m-l-profile {
+    margin-left: 25px;
+}
+
+.p-l-profile {
+    padding-left: 100px;
+}
+
+.p-r-profile {
+    padding-right: 100px;
+}

@@ -1,3 +1,6 @@
+<% if is_cart_empty(@cart.total) %>
+  <h2>T'es con ou quoi, y'a pas de produit dans ton panier, tu veux payer quoi ?! Ouais je suis énervé ouais...</h2> 
+<% else %>
 <div class="container">
   <div class="jumbotron jumbotron-fluid ">
     <div>
@@ -23,7 +26,7 @@
               </div>
             <% end %>
             <label class="amount">
-              <span>Amount: <%= @amount %></span>
+              <span>Montant : <%= @amount %> €</span>
             </label>
           </article>
         
@@ -31,8 +34,10 @@
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                   data-description="le montant de votre a-chat :"
                   data-amount="<%= @amount * 100 %>"
+                  data-currency="eur"
                   data-locale="auto"></script>
       <% end %>
     </div>
   </div>
 </div>
+<% end %>

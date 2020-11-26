@@ -8,7 +8,9 @@ class OrdersController < ApplicationController
 
 	def new
 		@order = Order.new
-
+		puts "*******"
+		puts @cart.total
+		puts "*******"
 	  @amount = @cart.total.to_i
 	  session[:price] = @cart.total.to_i
  
