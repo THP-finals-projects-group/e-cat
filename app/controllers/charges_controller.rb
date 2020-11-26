@@ -1,2 +1,0 @@
-class ChargesController < ApplicationController
-end
