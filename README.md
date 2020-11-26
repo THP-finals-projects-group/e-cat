@@ -1,5 +1,7 @@
-# README
+# Welcome on your first group project with THE HACKING PROJECT
+## Description :
 
+## How to use it :
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
