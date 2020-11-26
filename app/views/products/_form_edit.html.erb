@@ -1,3 +1,5 @@
+<br>
+<br>
 <div class="container">
   <div class="jumbotron jumbotron-fluid text-center">
     <h1 class="display-4">Edite ton chat</h1>
@@ -15,21 +17,21 @@
     <div class="row form-group ">
       <div class="col-md-8">
         <div class="row edit-cat">
-          <%= form.label :title, class: 'white' %>
+          <%= form.label :title %>
           <%= form.text_field :title, class: 'form-control', required: true %>
         </div>
         <div class="row edit-cat">
-          <%= form.label :description, class: 'white' %>
+          <%= form.label :description %>
           <%= form.text_area :description, class: 'form-control', required: true, min:25, max:5000 %>
         </div>
         <div class="row edit-cat">
-          <%= form.label :price, class: 'white' %>
+          <%= form.label :price %>
           <%= form.number_field :price, class: 'form-control', required: true, min:1 %>
         </div>
       </div>
       <div class="col-md-4 edit-cat">
         <div>
-          <%= form.label :image, class: 'white' %><br />
+          <%= form.label :image%><br />
           <%= form.file_field :image, class: 'form-control', accept: "image/png, image/gif, image/jpeg" %>
         </div>
         <div style="margin-top: 2em;">
