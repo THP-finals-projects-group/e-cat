@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  get 'orders/index'
-  get 'orders/show'
-  get 'orders/new'
-  resources :line_items
-  resources :carts
-  resources :orders
-  resources :products
-  devise_for :users
+
+  root "products#index"
+
+  resources :line_items, only: [:index, :new, :create, :update, :destroy]
+  resources :carts, :path => "mon_panier"
+  resources :products, :path => "chat"
+  resources :orders, only: [:index, :new, :show, :create], :path => "ma_commande"
+
+  devise_for :users, :path => "mon_profil"
+
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
     get 'users/:id' => 'users#show', as: :user
   end
-  root "products#index"
-  resources :charges
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end

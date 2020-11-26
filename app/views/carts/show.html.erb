@@ -27,7 +27,7 @@
     <span class="amount-price"><%= @cart.total %></span> €
   </p>
   <div>
-    <%= link_to "Commander", orders_new_path(@cart), class: "btn btn-primary" %>
+    <%= link_to "Commander", new_order_path(@cart), class: "btn btn-primary" %>
 
     <%= link_to 'Modifier', edit_cart_path(@cart) %> |
     <%= link_to 'Retour', products_path %>
