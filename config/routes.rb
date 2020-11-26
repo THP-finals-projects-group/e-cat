@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :carts, :path => "mon_panier"
   resources :products, :path => "chat"
   resources :orders, only: [:index, :new, :show, :create], :path => "ma_commande"
+  resource  :charges
 
-  devise_for :users, :path => "mon_profil"
+  devise_for :users
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
