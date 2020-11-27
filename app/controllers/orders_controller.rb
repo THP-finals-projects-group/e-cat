@@ -8,9 +8,6 @@ class OrdersController < ApplicationController
 
 	def new
 		@order = Order.new
-		puts "*******"
-		puts @cart.total
-		puts "*******"
 	  @amount = @cart.total.to_i
 	  session[:price] = @cart.total.to_i
  
@@ -41,6 +38,7 @@ class OrdersController < ApplicationController
 			@cart.destroy
 
 			OrderMailer.order_mail(@order).deliver_now
+			OrderMailer.order_mail_admin(@order).deliver_now
 
 			puts "saved"
 			redirect_to user_path(current_user.id), :notice => 'Paiement enregisté et mail envoyé !'
