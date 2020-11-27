@@ -232,10 +232,6 @@ h1 {
 
 /* NAVBAR */
 
-.navbar {
-    width:100vw;
-}
-
 .navbar .row > div {
     width:33%;
     text-align:center;

@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
 	end
 
 	def create
-		@amount = session[:price]
+		@amount = session[:price] 
 		@lineitems = LineItem.where(cart_id: @cart.id)
 
 		customer = Stripe::Customer.create({
