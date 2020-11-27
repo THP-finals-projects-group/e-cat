@@ -1,0 +1,59 @@
+<br>
+<br>
+<div class="container">
+  <div class="jumbotron jumbotron-fluid text-center">
+    <h1 class="display-4">Edite ton chat</h1>
+    <%= form_with(model: product, local: true) do |form| %>
+    <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <ul>
+        <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      </ul>
+      <% end %>
+    </div>
+    <% end %>
+    <div class="row form-group ">
+      <div class="col-md-8">
+        <div class="row edit-cat">
+          <%= form.label :title %>
+          <%= form.text_field :title, class: 'form-control', required: true %>
+        </div>
+        <div class="row edit-cat">
+          <%= form.label :description %>
+          <%= form.text_area :description, class: 'form-control', required: true, min:25, max:5000 %>
+        </div>
+        <div class="row edit-cat">
+          <%= form.label :price %>
+          <%= form.number_field :price, class: 'form-control', required: true, min:1 %>
+        </div>
+      </div>
+      <div class="col-md-4 edit-cat">
+        <div>
+          <%= form.label :image%><br />
+          <%= form.file_field :image, class: 'form-control', accept: "image/png, image/gif, image/jpeg" %>
+        </div>
+        <div style="margin-top: 2em;">
+          <%if @product.image.attached? %>
+          <%= image_tag @product.image, width:"50%" %>
+          <%end%>
+        </div>
+      </div>
+      </div> 
+      <div class="row" style="padding-top: 1em;">
+        <div class="col-md-3">
+          <%= link_to "Retour", root_path, class:"btn btn-primary btn-outline btn-sm" %>
+        </div>
+        <div class="col-md-6">
+          <%= form.submit "Modifier les infos", class:"btn btn-primary btn-outline btn-sm" %>
+        </div>
+        <div class="col-md-3">
+          <%= link_to "Supprimer ce chat", @product, method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer ce chat?'}, class:"class:btn btn-danger btn-outline btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+

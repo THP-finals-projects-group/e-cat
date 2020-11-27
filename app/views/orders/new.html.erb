@@ -32,7 +32,7 @@
         
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="A month's subscription"
+                  data-description="le montant de votre a-chat :"
                   data-amount="<%= @amount * 100 %>"
                   data-currency="eur"
                   data-locale="auto"></script>

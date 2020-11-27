@@ -13,26 +13,31 @@
   <div class="row form-group ">
     <div>
       <div class="col-md-4">
-        <%= form.label :title, class: 'white' %>
+        <%= form.label :title %>
         <%= form.text_field :title, class: 'form-control', required: true %>
       </div>
       <div class="col-md-6">
-        <%= form.label :image, class: 'white' %><br />
+        <%= form.label :image %><br />
         <%= form.file_field :image, class: 'form-control', accept: "image/png, image/gif, image/jpeg" %>
       </div>
       <div class="col-md-8">
-        <%= form.label :description, class: 'white' %>
+        <%= form.label :description %>
         <%= form.text_area :description, class: 'form-control', required: true, min:25, max:5000 %>
       </div>
       <div class="col-md-6">
-        <%= form.label :price, class: 'white' %>
+        <%= form.label :price %>
         <%= form.number_field :price, class: 'form-control', required: true, min:1 %>
       </div>
-    </div>
+    </div>  
     <div class="col-md-12">
       <div class="actions">
         <%= form.submit "Ajouter le matou", class: 'btn btn-success' %>
       </div>
     </div> 
+    <div class="col-md-12">
+      <div class="actions">
+  <%= link_to 'Retour', products_path, class: 'btn btn-danger'%>
+  </div>
+  </div>
   </div> 
 <% end %>

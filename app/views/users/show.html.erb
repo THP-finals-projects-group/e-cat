@@ -41,7 +41,6 @@
       <div class="text-center">
         <%= link_to 'Editer mon profil', edit_user_registration_path, class:"btn btn-primary btn-outline btn-lg" %>
       </div>
-      </br>
       <div class="table ">
         <table class="table">
           <thead class="table-header h4">
@@ -54,16 +53,24 @@
             </tr>
           </thead>
           <tbody>
-            <% @products_title.length.times do |i| %>
+            <% @orders.each do |order| %>
               <tr>
-                <th><strong><%= @products_title[i] %></strong></th>
-                <th><%= @products_price[i] %></th>
-                <th><%=@products_quantity[i]%></th>
-                <th><%= @products_price[i] * @products_quantity[i]%></th>
+                <th>Commande numéro : <strong><%= order.id %></strong></th>
+                <% total = 0 %>
+                <% order.order_items.each do |order_item| %>
+                  <% total += order_item.quantity * order_item.product.price %>
+                  <tr>
+                    <th class="text-center"><strong><%= order_item.product.title %></strong></th>
+                    <th class="text-center"><%= order_item.product.price %></th>
+                    <th class="text-center"><%= order_item.quantity %></th>
+                    <th class="text-center"><%= order_item.quantity * order_item.product.price %></th>
+                  </tr>
+                <% end %>
+                <th class="text-right">Total du prix de la commande : <strong><%= total %></strong></th>
               </tr>
             <% end %>
           </tbody>
-        </table>
+         </table>
       </div>
     </div>
   </div>

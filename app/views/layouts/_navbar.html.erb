@@ -33,11 +33,11 @@
           </a> 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
             <% if current_user %>
+              <div class="m-l-profile">
+                <%= link_to 'Profil', user_path(current_user), :class => "btn btn-primary btn-outline btn-lg" %>
+              </div>
               <%= link_to 'Deconnexion', destroy_user_session_path, :class => "btn btn-danger btn-outline btn-lg" %>
               <br>
-              <div class="m-l-profile">
-                <%= link_to 'Profile', user_path(current_user), :class => "btn btn-primary btn-outline btn-lg" %>
-              </div>
             <%else%>
               <%= link_to 'Connexion', new_user_session_path, :class => "btn btn-success btn-outline btn-lg" %> 
               <br>
