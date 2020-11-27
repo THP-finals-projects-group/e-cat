@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>A-chat de <%= @user.firstname %> <%= @user.lastname %> !</h1>
+
+    <% @products_title.length.times do |i| %>
+      <h2>Titre : <%= @products_title[i] %></h2>
+      <p>Description : <%= @products_description[i] %></p>
+      <p>Prix : <%= @products_price[i] %></p>
+    <% end %>    
+  </body>
+</html>
